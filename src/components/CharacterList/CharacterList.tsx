@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import {Person} from '../../types/Person';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../types/RootStackParamsList';
