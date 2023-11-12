@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  Pressable,
+  Image,
+} from 'react-native';
 import {Person} from '../../types/Person';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../types/RootStackParamsList';
 import {useAppDispatch, useAppSelector} from '../../app/hooks';
-import {Icon} from 'react-native-elements';
+
 import {actions as actionsFavorites} from '../../features/favorites/Favorites';
 
 import styles from './styles';
@@ -49,18 +56,23 @@ const CharacterList: React.FC<Props> = ({data, navigation}) => {
               key={item.name}
               onPress={() => navigation.navigate('CharacterInfo', item)}>
               <Text style={styles.listText}>Name: {item?.name}</Text>
-              <Icon
-                raised
-                name="favorite"
+              <Pressable
                 onPress={() => {
                   if (isFavorite) {
                     handleRemoveFromFavorites(item);
                   } else {
                     handleAddToFavorites(item);
                   }
-                }}
-                color={isFavorite ? 'red' : 'gray'}
-              />
+                }}>
+                <Image
+                  style={styles.image}
+                  source={
+                    !isFavorite
+                      ? require('../../images/heart.png')
+                      : require('../../images/heart-like.png')
+                  }
+                />
+              </Pressable>
             </TouchableOpacity>
           </View>
         );

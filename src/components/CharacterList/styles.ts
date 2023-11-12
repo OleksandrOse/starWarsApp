@@ -8,16 +8,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    margin: 10,
   },
   listContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'baseline',
-    width: '82%',
+    alignItems: 'center',
+    width: '100%',
+    borderWidth: 2,
+    borderColor: '#3480eb',
+    borderRadius: 15,
+    padding: 10,
   },
   listText: {
-    paddingLeft: 19,
     textAlign: 'justify',
+  },
+  imageContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  image: {
+    width: 20,
+    height: 20,
+    aspectRatio: '8/8',
   },
 });
 
